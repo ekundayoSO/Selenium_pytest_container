@@ -1,0 +1,36 @@
+1690932085843	geckodriver	INFO	Listening on 127.0.0.1:51258
+1690932088915	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51259" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\omowu\\AppData\\Local\\Temp\\rust_mozprofile7BQHYc"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1690932090380	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1690932090602	Marionette	INFO	Listening on port 51270
+WebDriver BiDi listening on ws://127.0.0.1:51259
+Read port: 51270
+1690932090861	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:51259/devtools/browser/205bb138-7003-4d8a-9d7b-07236640a16c
+JavaScript warning: https://demowebshop.tricentis.com/Scripts/jquery-1.10.2.min.js, line 19: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://demowebshop.tricentis.com/Scripts/jquery-1.10.2.min.js, line 19: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://demowebshop.tricentis.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://demowebshop.tricentis.com."
+JavaScript warning: https://demowebshop.tricentis.com/Scripts/jquery-1.10.2.min.js, line 19: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1690932099938	Marionette	INFO	Stopped listening on port 51270
+Dynamically enable window occlusion 1
+1690932436776	geckodriver	INFO	Listening on 127.0.0.1:51583
+1690932439812	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51584" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\omowu\\AppData\\Local\\Temp\\rust_mozprofileF4mzkp"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1690932440859	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1690932441071	Marionette	INFO	Listening on port 51593
+WebDriver BiDi listening on ws://127.0.0.1:51584
+Read port: 51593
+1690932441433	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:51584/devtools/browser/b75ef04e-47b2-4f2e-aac6-be673b883599
+JavaScript warning: https://demowebshop.tricentis.com/Scripts/jquery-1.10.2.min.js, line 19: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://demowebshop.tricentis.com/Scripts/jquery-1.10.2.min.js, line 19: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://demowebshop.tricentis.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://demowebshop.tricentis.com."
+JavaScript warning: https://demowebshop.tricentis.com/Scripts/jquery-1.10.2.min.js, line 19: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1690932450151	Marionette	INFO	Stopped listening on port 51593
+Dynamically enable window occlusion 1
