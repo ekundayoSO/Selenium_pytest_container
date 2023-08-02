@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.options import Options
 
-from seleniumOnVM.LoginTest import email, password
+from seleniumOnLM.loginTest import email, password
 
 firefox_options = Options()
 capabilities = webdriver.DesiredCapabilities.FIREFOX.copy()
@@ -12,7 +12,8 @@ url = "http://localhost:4444/wd/hub"
 driver = webdriver.Remote(command_executor=url, options=firefox_options)
 
 
-def run_test_on_firefox():
+def run_test_on_firefox2():
+    # Instantiate browser and navigate to URL
     driver.get("https://demowebshop.tricentis.com/")
 
     # Login
@@ -21,15 +22,18 @@ def run_test_on_firefox():
     driver.find_element(By.CSS_SELECTOR, "#Password").send_keys(password)
     driver.find_element(By.CSS_SELECTOR, ".login-button").click()
 
-    # Delete products in cart
+    # Assert products in shopping cart
     driver.find_element(By.LINK_TEXT, "Shopping cart").click()
-    checkboxes = driver.find_elements(By.XPATH, "//td/input[@type='checkbox']")
+    prices = driver.find_elements(By.CSS_SELECTOR, "td:nth-child(6)")
 
-    for checkbox in checkboxes:
-        checkbox.click()
+    summation = 0
 
-    driver.find_element(By.CLASS_NAME, "update-cart-button").click()
+    for price in prices:
+        summation = summation + float(price.text)
 
-    print("I'm using FIREFOX this time to run the test remotely!")
+    print(summation)
+    subTotal = float(driver.find_element(By.CLASS_NAME, "product-price").text)
+
+    assert summation == subTotal, "Summation and subTotal are equal"
 
     driver.close()

@@ -3,7 +3,7 @@ from selenium.webdriver import Keys
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
-from seleniumOnVM.LoginTest import email, password
+from seleniumOnVM.loginTest import email, password
 
 chrome_options = Options()
 capabilities = webdriver.DesiredCapabilities.CHROME.copy()
@@ -14,6 +14,7 @@ driver = webdriver.Remote(command_executor=url, options=chrome_options)
 
 
 def run_test_on_chrome():
+    products = ["Health Book", "Smartphone", "Blue Jeans"]
     driver.get("https://demowebshop.tricentis.com/")
 
     # Login
@@ -23,14 +24,10 @@ def run_test_on_chrome():
     driver.find_element(By.CSS_SELECTOR, ".login-button").click()
 
     # Add products to shopping cart
-    products = ["Health Book", "Smartphone", "Blue Jeans"]
-
     for product in products:
         search_box = driver.find_element(By.CSS_SELECTOR, "#small-searchterms")
         search_box.send_keys(product, Keys.RETURN)
         add_to_cart_button = driver.find_element(By.CSS_SELECTOR, "input[value='Add to cart']")
         add_to_cart_button.click()
-
-    print("I'm running this test remotely on CHROME")
 
     driver.quit()

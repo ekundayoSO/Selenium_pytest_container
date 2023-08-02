@@ -3,14 +3,17 @@ from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.edge.service import Service
 
-from seleniumOnLM.LoginTest import email, password
+from seleniumOnLM.loginTest import email, password
 
 
 def run_test_on_edge():
+    products = ["Health Book", "Smartphone", "Blue Jeans"]
+
     # Instantiate browser and navigate to URL
     service_obj = Service("/Users/omowu/Desktop/Selenium/msedgedriver.exe")
     driver = webdriver.Edge(service=service_obj)
     driver.maximize_window()
+    driver.implicitly_wait(5)
 
     driver.get("https://demowebshop.tricentis.com/")
 
@@ -21,8 +24,6 @@ def run_test_on_edge():
     driver.find_element(By.CSS_SELECTOR, ".login-button").click()
 
     # Add products to shopping cart
-    products = ["Health Book", "Smartphone", "Blue Jeans"]
-
     for product in products:
         search_box = driver.find_element(By.CSS_SELECTOR, "#small-searchterms")
         search_box.send_keys(product, Keys.RETURN)

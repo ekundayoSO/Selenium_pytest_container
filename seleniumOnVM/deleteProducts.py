@@ -1,15 +1,19 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.webdriver.firefox.options import Options
 
-from seleniumOnLM.LoginTest import email, password
+from seleniumOnVM.loginTest import email, password
 
 
-def run_test_on_chrome2():
-    service_obj = Service("/Users/omowu/Desktop/Selenium/chromedriver.exe")
-    driver = webdriver.Chrome(service=service_obj)
-    driver.maximize_window()
+firefox_options = Options()
+capabilities = webdriver.DesiredCapabilities.FIREFOX.copy()
+capabilities['platform'] = "WINDOWS"
 
+url = "http://localhost:4444/wd/hub"
+driver = webdriver.Remote(command_executor=url, options=firefox_options)
+
+
+def run_test_on_firefox():
     driver.get("https://demowebshop.tricentis.com/")
 
     # Login
@@ -26,5 +30,7 @@ def run_test_on_chrome2():
         checkbox.click()
 
     driver.find_element(By.CLASS_NAME, "update-cart-button").click()
+
+    print("I'm using FIREFOX this time to run the test remotely!")
 
     driver.close()
